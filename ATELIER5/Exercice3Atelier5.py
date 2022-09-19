@@ -12,8 +12,3 @@ def choose_element_list(list_in_which_to_choose: list) -> object:
         object: élément choisi
     """
     return list_in_which_to_choose[random.randint(0, len(list_in_which_to_choose) - 1)]
-
-liste = [5, "ALBERT", (3, 4), "A", False]
-print(liste)
-choose_element_list(liste)
-print(choose_element_list(liste))

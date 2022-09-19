@@ -1,4 +1,5 @@
 from Exercice3Atelier5 import choose_element_list
+import random
 
 def extract_elements_list(list_in_which_to_choose: list, int_number_of_element_to_extract: int) -> list:
     """fonction permettant de choisir un sample d'une liste
@@ -10,17 +11,16 @@ def extract_elements_list(list_in_which_to_choose: list, int_number_of_element_t
     Returns:
         list: éléments choisis entrés dans une liste
     """
+    i = 0
     retourListe = [] #liste temporaire
-    for i in range(int_number_of_element_to_extract):
+    while i < int_number_of_element_to_extract:
         element = choose_element_list(list_in_which_to_choose) #on stocke l'élément choisi dans une var
         if element not in retourListe: #si l'élément est ajouté pour la première fois dans la liste
-            retourListe.append(element) #bah on l'ajoute
-        else: #sinon
-            element = choose_element_list(list_in_which_to_choose) #on choisit un autre élément
-            retourListe.append(element) #et on le stocke
-
+            retourListe.append(element)
+            i += 1
     return retourListe
 
-liste = [5, "ALBERT", (3, 4), "A", False, 64.32, ["l","i","s","t","e"]]
+liste = [i for i in range(20)]
 
-print(liste, extract_elements_list(liste, 3))
+print("fonction random.sample :", random.sample(liste, 5))
+print("fonction créée par nous :", extract_elements_list(liste, 5))

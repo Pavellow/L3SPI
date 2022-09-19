@@ -12,10 +12,15 @@ def gen_list_random_int(int_nbr: int, int_binf: int, int_bsup: int) -> list:
         list: liste créée par la fonction
     """
     retourListe = []
-    for i in range(int_nbr):
-        nbrAleatoire = random.randint(int_binf, int_bsup)
-        retourListe.append(nbrAleatoire)
+    if int_binf != 0 or int_bsup != 0:
+        for i in range(int_nbr):
+            nbrAleatoire = random.randint(int_binf, int_bsup)
+            retourListe.append(nbrAleatoire)
+    else:
+        for i in range(10):
+            nbrAleatoire = random.randint(0,10)
+            retourListe.append(nbrAleatoire)
     
     return retourListe
 
-print(gen_list_random_int(3, 5, 24))
+print(gen_list_random_int(3,0,1))

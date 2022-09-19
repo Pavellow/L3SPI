@@ -12,3 +12,5 @@ def choose_element_list(list_in_which_to_choose: list) -> object:
         object: élément choisi
     """
     return list_in_which_to_choose[random.randint(0, len(list_in_which_to_choose) - 1)]
+
+print(choose_element_list([i for i in range(10)]))
